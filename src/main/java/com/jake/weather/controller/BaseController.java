@@ -22,9 +22,8 @@ public class BaseController {
     @SuppressWarnings( "unchecked" )
     public ResponseEntity<Map<String, Object>> resolveException( Exception e, HttpServletRequest request ) {
         Map<String, String> pathVariables = (Map<String, String>) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
-        String city = pathVariables.get("city");
-
         try {
+            String city = pathVariables.get("city");
             return ResponseEntity.ok( weatherService.getFallback( city ) );
         } catch ( Exception ex ){
             return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( Map.of("status", "error", "reason", "City might be invalid or services are unavailable"));
