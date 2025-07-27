@@ -41,13 +41,17 @@ This means the service has started successfully and it will run on default port:
 
 Go to your browser and put the ff in the address bar:
 
-  ```bash
-  http://localhost:10000/getWeather/{city}
+asdasd
+    ```bash
+    http://localhost:10000/getWeather/{city}
 
 Replace city with an existing city. Here is a sample:
 
-```bash
-http://localhost:10000/getWeather/sydney
+    ```bash
+    http://localhost:10000/getWeather/sydney
+
+
+
 
 
 
