@@ -21,18 +21,25 @@ Before you build or run this project, make sure you have:
 ## ✅ Build instructions  
 In order to build the jar file, we need to use maven. Run the below command:
     ```bash
-    mvn clean install
+    ./mvnw clean install    # on Mac/Linux
+    mvnw.cmd clean install  # on Windows
 
 It should create a jar file under the target directory. Check if target/weather-0.0.1-SNAPSHOT.jar exists.
 
 ## ✅ Run instructions
 To start the weather service, Run the below command from the root directory:
     ```bash
-    java -jar target/weather-0.0.1-SNAPSHOT.jar 
+    ./mvnw spring-boot:run      # Linux / Mac
+    mvnw.cmd spring-boot:run    # Windows
+
 
 It should show logs that contains
     ```bash
     Completed initialization in 0 ms
+
+If youre getting 'Permission Denied' in an error message, running this command will make it executable:
+    ```bash
+    chmod +x mvnw
 
 This means the service has started successfully and it will run on default port: 10000.
 
