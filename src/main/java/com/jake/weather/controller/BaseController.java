@@ -1,16 +1,15 @@
 package com.jake.weather.controller;
 
-import com.github.benmanes.caffeine.cache.Cache;
 import com.jake.weather.service.WeatherService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.HandlerMapping;
 
 import java.util.Map;
-import java.util.Objects;
 
 @ControllerAdvice
 public class BaseController {
@@ -28,7 +27,5 @@ public class BaseController {
         } catch ( Exception ex ){
             return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( Map.of("status", "error", "reason", "City might be invalid or services are unavailable"));
         }
-
     }
-
 }
