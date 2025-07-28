@@ -21,6 +21,7 @@ public class WeatherController {
     private WeatherService weatherService;
 
     @GetMapping("getWeather/{city}")
+    @SuppressWarnings( "unchecked" )
     public ResponseEntity<Map<String, Object>> getWeather( @PathVariable("city") String city ) throws Exception {
 
         Map<String, Object> weather = ( Map<String, Object> ) cache.getIfPresent( city );
